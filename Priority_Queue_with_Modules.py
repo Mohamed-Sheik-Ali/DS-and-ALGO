@@ -1,23 +1,23 @@
-from collections import deque
+from queue import PriorityQueue
 
-queue = deque()
+q = PriorityQueue()
 
 
 def enqueue():
 
     element = int(input("Enter an element: "))
-    queue.appendleft(element)
-    print(f"Queue is: {queue}")
+    q.put(element)
+    print(f"{q.qsize()} is the current size of the queue")
 
 
 def dequeue():
 
-    if not queue:
-        print("Oops! Queue is empty")
+    if not q:
+        print("Oops! it\'s empty")
     else:
-        e = queue.pop()
+        e = q.get()
         print(f"{e} is removed")
-        print(f"{queue} is the current queue")
+        print(f'Current queue size {q.qsize()}')
 
 
 while True:

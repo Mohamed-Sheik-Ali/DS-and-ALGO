@@ -1,23 +1,24 @@
-from collections import deque
+queue = []
 
-queue = deque()
+# Here we can set the priority using tuple like (priority, value) eg: (1, "Some value")
 
 
 def enqueue():
 
-    element = int(input("Enter an element: "))
-    queue.appendleft(element)
-    print(f"Queue is: {queue}")
+    element = input("Enter an element: ")
+    queue.append(element)
+    queue.sort(reverse=True)
+    print(f"{queue} is the current queue")
 
 
 def dequeue():
 
     if not queue:
-        print("Oops! Queue is empty")
+        print("Oops! it\'s empty")
     else:
-        e = queue.pop()
+        e = queue.pop(0)
         print(f"{e} is removed")
-        print(f"{queue} is the current queue")
+        print(f'Current queue {queue}')
 
 
 while True:

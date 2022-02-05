@@ -7,5 +7,6 @@
 <li>Binary Search</li>
 <li>Stack</li>
 <li>Queue</li>
+<li>Priority Queue</li>
 <li>Linked List</li>
 </ul>
