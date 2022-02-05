@@ -1,9 +1,15 @@
 stack = []
 
 def push():
-    element = input("Enter the element: ")
-    stack.append(element)
-    print(stack)
+    if len(stack) == n:
+        print("Looks like the stack is filled!")
+        print("")
+    else:
+        element = input("Enter the element: ")
+        print("")
+        stack.append(element)
+        print(stack)
+        print("")
 
 def pop():
     if not stack:
@@ -11,11 +17,16 @@ def pop():
     else:
         e = stack.pop()
         print(f"{e} is popped from the stack")
+        print("")
         print(f"Current stack is => {stack}")
+        print("")
+
+n = int(input("Set the limit here: "))
 
 while True:
-
-    print("Select an operation: 1) PUSH.  2) POP. 3) QUIT.")
+    
+    print("What are you going to do? 1/2/3: 1) PUSH.  2) POP. 3) QUIT.")
+    print("")
     choice = int(input("Enter a choice 1/2/3: "))
 
     if choice == 1:
