@@ -1,8 +1,4 @@
 # 1) Create a Node.
-
-from hashlib import new
-
-
 class Node:
 
     def __init__(self, data):
@@ -24,7 +20,7 @@ class LinkedList():
         else:
             n = self.head
             while n is not None:
-                print(n.data)
+                print(f"{n.data} ->", end="")  
                 n = n.next_node
     # 3) To add or insert a node in the beginning
     def add_at_beginning(self, data):
@@ -42,13 +38,12 @@ class LinkedList():
                 n = n.next_node
             n.next_node = new_node
 
+    def add_in_between(self, data):
+        new_node = Node(data)
+
 
 Ll = LinkedList()
 Ll.add_at_beginning(10)
-Ll.add_at_beginning(20)
 Ll.add_at_end(21) # will add at the end of the linked list
-Ll.add_at_beginning(30)
-Ll.add_at_beginning(40)
-Ll.add_at_end(22)
 Ll.add_at_beginning(50)
 Ll.printL()
