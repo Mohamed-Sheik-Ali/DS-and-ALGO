@@ -87,6 +87,12 @@ class LinkedList():
         else:
             print("Linked List is not empty!")
 
+    def delete_at_beginning(self):
+        if self.head is None:
+            print("Linked List is empty!")
+        else:
+            self.head = self.head.next_node
+
 
 Ll = LinkedList()
 Ll.add_at_beginning(10)
@@ -95,4 +101,5 @@ Ll.add_at_beginning(50)
 Ll.add_before_given_node(11, 21)
 Ll.add_after_given_node(100, 10)
 Ll.add_after_given_node(200, 100)
+Ll.delete_at_beginning()  # 50 will be deleted which is at the start of the Linked List
 Ll.printL()
