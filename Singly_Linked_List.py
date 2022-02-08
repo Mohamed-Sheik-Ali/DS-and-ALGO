@@ -80,6 +80,13 @@ class LinkedList():
             new_node.next_node = n.next_node
             n.next_node = new_node
 
+    def add_element_when_empty(self, data):
+        if self.head is None:
+            new_node = Node(data)
+            self.head = new_node
+        else:
+            print("Linked List is not empty!")
+
 
 Ll = LinkedList()
 Ll.add_at_beginning(10)
