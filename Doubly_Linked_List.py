@@ -16,7 +16,7 @@ class Doubly_Linked_List:
         else:
             n = self.head
             while n is not None:
-                print(f"{n.data} ->", end="", sep="->")
+                print(f"{n.data} ->", end="")
                 n = n.nextNode
 
     def printDll_reverse(self):
@@ -27,7 +27,7 @@ class Doubly_Linked_List:
             while n.nextNode is not None:
                 n = n.nextNode
             while n is not None:
-                print(f"{n.data}", end="", sep="->")
+                print(f"{n.data} -> ", end="")
                 n = n.prevNode
 
     def Insert_when_empty(self, data):
@@ -58,10 +58,52 @@ class Doubly_Linked_List:
             n.nextNode = new_node
             new_node.prevNode = n
 
+    def add_after_given_node(self, data, x):
+        if self.head is None:
+            print("Linked List is empty")
+        else:
+            n = self.head
+            while n is not None:
+                if x == n.data:
+                    break
+                n = n.nextNode
+            if n is None:
+                print("Node doesn't exist")
+            else:
+                new_node = Node(data)
+                new_node.nextNode = n.nextNode
+                new_node.prevNode = n
+                if n.nextNode is not None:
+                    n.nextNode.prevNode = new_node
+                n.nextNode = new_node
+
+    def add_before_given_node(self, data, x):
+        if self.head is None:
+            print("Linked List is empty")
+        else:
+            n = self.head
+            while n is not None:
+                if x == n.data:
+                    break
+                n = n.nextNode
+            if n is None:
+                print("Node doesn't exist")
+            else:
+                new_node = Node(data)
+                new_node.nextNode = n
+                new_node.prevNode = n.prevNode
+                if n.prevNode is not None:
+                    n.prevNode.nextNode = new_node
+                else:
+                    self.head = new_node
+                n.prevNode = new_node
+
 
 dll = Doubly_Linked_List()
 dll.Insert_when_empty(20)
 dll.Insert_at_beginning(10)
 dll.Insert_at_end(100)
+dll.add_after_given_node(11, 100)
+dll.add_before_given_node(12, 100)
 dll.printDll()
 # dll.printDll_reverse()
