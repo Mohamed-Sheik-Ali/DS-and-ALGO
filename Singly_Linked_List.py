@@ -20,7 +20,7 @@ class LinkedList():
         else:
             n = self.head
             while n is not None:
-                print(f"{n.data} ->", end="")
+                print(f"{n.data} ->", end="", sep="->")
                 n = n.next_node
 
     # To add or insert a node in the beginning
