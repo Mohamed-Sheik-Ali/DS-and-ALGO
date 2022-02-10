@@ -120,6 +120,34 @@ class Doubly_Linked_List:
                 n = n.nextNode
             n.prevNode.nextNode = None
 
+    def delete_by_value(self, value):
+        if self.head is None:
+            print("Linked List is empty")
+            return
+        if self.head.nextNode is None:
+            if value == self.head.data:
+                self.head = None
+            else:
+                print("Node doesn't exist in linked list")
+            return
+        if self.head.data == value:
+            self.head = self.head.nextNode
+            self.head.prevNode = None
+            return
+        n = self.head
+        while n.nextNode is not None:
+            if value == n.data:
+                break
+            n = n.nextNode
+        if n.nextNode is not None:
+            n.nextNode.prevNode = n.prevNode
+            n.prevNode.nextNode = n.nextNode
+        else: # To remove the element at end of the list
+            if value == n.data:
+                n.prevNode.nextNode = None
+            else:
+                print("Node doesn't exist")
+
 
 dll = Doubly_Linked_List()
 dll.Insert_when_empty(20)
@@ -127,6 +155,7 @@ dll.Insert_at_beginning(10)
 dll.Insert_at_end(100)
 dll.add_after_given_node(11, 100)
 dll.add_before_given_node(12, 100)
+# dll.delete_by_value(20)
 # dll.delete_from_beginning() => will delete the node "10"
 # dll.delete_from_end() => will delete the node "11"
 dll.printDll()
