@@ -98,6 +98,28 @@ class Doubly_Linked_List:
                     self.head = new_node
                 n.prevNode = new_node
 
+    def delete_from_beginning(self):
+        if self.head is None:
+            print("Linked List is empty")
+            return
+        if self.head.nextNode is None:
+            self.head = None
+        else:
+            self.head = self.head.nextNode
+            self.head.prevNode = None
+
+    def delete_from_end(self):
+        if self.head is None:
+            print("Linked List is empty")
+            return
+        if self.head.nextNode is None:
+            self.head = None
+        else:
+            n = self.head
+            while n.nextNode is not None:
+                n = n.nextNode
+            n.prevNode.nextNode = None
+
 
 dll = Doubly_Linked_List()
 dll.Insert_when_empty(20)
@@ -105,5 +127,7 @@ dll.Insert_at_beginning(10)
 dll.Insert_at_end(100)
 dll.add_after_given_node(11, 100)
 dll.add_before_given_node(12, 100)
+# dll.delete_from_beginning() => will delete the node "10"
+# dll.delete_from_end() => will delete the node "11"
 dll.printDll()
 # dll.printDll_reverse()
