@@ -9,4 +9,5 @@
 <li>Queue</li>
 <li>Priority Queue</li>
 <li>Linked List</li>
+<li>Selection Sort</li>
 </ul>

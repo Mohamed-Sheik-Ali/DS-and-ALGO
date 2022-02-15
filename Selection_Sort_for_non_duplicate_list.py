@@ -1,5 +1,5 @@
 def Selection_Sort(list):
-    for i in range(len(unsorted_list)):
+    for i in range(len(unsorted_list)-1):
 
         min_val = min(list[i:])
         min_val_index = list.index(min_val)
