@@ -8,9 +8,10 @@ def Pivot_Placement(list, first, last):
     left = first+1
     right = last
     while True:
+        # Just change it to >= for descending order
         while left <= right and list[left] <= pivot:
             left = left+1
-
+        # Just change it to <= for descending order
         while left <= right and list[right] >= pivot:
             right = right-1
 
